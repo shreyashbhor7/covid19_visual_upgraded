@@ -17,7 +17,7 @@ st.markdown('<div class="small-muted">Interactive dashboard with gradient backgr
 
 # Data loading: prefer full local dataset, otherwise use bundled sample
 RAW_LOCAL = Path('data/raw/owid-covid-data.csv')
-SAMPLE = Path('data/raw/owid-covid-data-sample.csv')
+SAMPLE = Path('data/raw/owid-covid-data.csv')
 
 @st.cache_data
 def load_data():
@@ -26,7 +26,7 @@ def load_data():
         st.warning('Loaded local full dataset (data/raw/owid-covid-data.csv)') 
     else:
         df = pd.read_csv(SAMPLE, parse_dates=['date'])
-        st.info('Using bundled sample dataset (data/raw/owid-covid-data-sample.csv)')
+        st.info('Using bundled sample dataset (data/raw/owid-covid-data.csv)')
     return df
 
 df = load_data()
