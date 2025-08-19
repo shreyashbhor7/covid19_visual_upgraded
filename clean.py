@@ -17,7 +17,7 @@ if __name__ == '__main__':
         df = pd.read_csv(RAW, parse_dates=['date'])
         clean(df)
     else:
-        alt = os.path.join('data','raw','owid-covid-data-sample.csv')
+        alt = os.path.join('data','raw','owid-covid-data.csv')
         if os.path.exists(alt):
             print('Raw not found, using sample.')
             df = pd.read_csv(alt, parse_dates=['date'])
